@@ -9,6 +9,7 @@ import { TeamComponent } from './team/team.component';
 import { NavComponent } from './nav/nav.component';
 import { TaxcalculatorComponent } from './taxcalculator/taxcalculator.component';
 import { BillmanagerComponent } from './billmanager/billmanager.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { BillmanagerComponent } from './billmanager/billmanager.component';
     TeamComponent,
     NavComponent,
     TaxcalculatorComponent,
-    BillmanagerComponent
+    BillmanagerComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,80 @@
-<p>billmanager works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col text-end">
+            <a href="/" class="btn btn-outline-success">Tax Calculator</a>
+        </div>
+        <div class="col">
+            <a href="/billmanager" class="btn btn-success billmanager">Bill Manager</a>
+        </div>
+    </div>
+    <div class="row mt-3 mb-3">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <hr style="height:2px; width:100%; border-width:0; color: black; background-color:black" />
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <h5>Net Salary</h5>
+            <form>
+                <div class="row">
+                    <div class="col-10">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">KSH</span>
+                            <input type="text" class="form-control" id="salary" aria-label="Amount (to the nearest dollar)">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <button type="submit" class="btn btn-success billmanager" onclick="getUserSalary()">Submit</button>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 p-3 bills">
+            <table class="table">
+               
+                <tbody id="data">
+                    
+                </tbody>
+            </table>
+            <br/>
+            <form>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Item</span>
+                    <input type="text" class="form-control" placeholder="Item" id="item" name="item">
+                    <span class="input-group-text">Amount</span>
+                    <input type="text" class="form-control" placeholder="Amount" id="amount" name="amount">
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-success billmanager" onclick="storeBillItems()">Submit</button>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-6 bills">
+            <hr/>
+            <table class="table">
+                <tbody id="calculations">
+                    
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <hr/>
+</div>
