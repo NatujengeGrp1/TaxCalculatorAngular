@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BillmanagerComponent } from './billmanager/billmanager.component';
 import { TaxcalculatorComponent } from './taxcalculator/taxcalculator.component';
 import { TeamComponent } from './team/team.component';
+import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
   {
@@ -16,7 +17,7 @@ const routes: Routes = [
   {
     path: 'team',
     component: TeamComponent
-  },
+  }
 
 ];
 

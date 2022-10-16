@@ -10,6 +10,9 @@ import { NavComponent } from './nav/nav.component';
 import { TaxcalculatorComponent } from './taxcalculator/taxcalculator.component';
 import { BillmanagerComponent } from './billmanager/billmanager.component';
 import { FooterComponent } from './footer/footer.component';
+import { TestComponent } from './test/test.component';
+import { FormsModule }   from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -18,13 +21,15 @@ import { FooterComponent } from './footer/footer.component';
     NavComponent,
     TaxcalculatorComponent,
     BillmanagerComponent,
-    FooterComponent
+    FooterComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
