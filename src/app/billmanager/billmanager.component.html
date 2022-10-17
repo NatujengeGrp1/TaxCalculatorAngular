@@ -19,12 +19,12 @@
         <div class="col-md-3"></div>
         <div class="col-md-6">
             <h5>Net Salary</h5>
-            <form>
+            <form #netSalaryForm="ngForm" (ngSubmit)="onSubmit(netSalaryForm)">
                 <div class="row">
                     <div class="col-10">
                         <div class="input-group mb-3">
                             <span class="input-group-text">KSH</span>
-                            <input type="text" class="form-control" id="salary" aria-label="Amount (to the nearest dollar)">
+                            <input type="number" class="form-control" id="salary" aria-label="Amount (to the nearest dollar)" name="Netsalary" ngModel>
                         </div>
                     </div>
                     <div class="col-2">
@@ -42,16 +42,29 @@
             <table class="table">
                
                 <tbody id="data">
-                    
+                    <tr *ngFor="let it of itemsRepository">
+                        <!-- <td>{{it.id}}</td> -->
+                        <td>{{it.title}}</td><td>{{it.amount}}</td>
+                        <button type="button" (click) = "DeleteItem(it.id)"
+                        class='btn btn-danger text-danger'>Delete</button>
+                    </tr>
                 </tbody>
             </table>
             <br/>
-            <form>
+            <h5>Add Items</h5>
+            <form #addItem="ngForm" (ngSubmit)="AddItems(addItem)">
+                
                 <div class="input-group mb-3">
                     <span class="input-group-text">Item</span>
-                    <input type="text" class="form-control" placeholder="Item" id="item" name="item">
+                    <input type="text" class="form-control" placeholder="Item" id="item" name="item" ngModel>
                     <span class="input-group-text">Amount</span>
-                    <input type="text" class="form-control" placeholder="Amount" id="amount" name="amount">
+                    <input type="number" class="form-control" placeholder="Amount" name="amount" ngModel>
+                    <span class="input-group-text">Month</span>
+                    <select type="text" class="form-control" placeholder="Month"
+                    name="month" ngModel>
+                        <option [ngValue] = 'c.name' *ngFor="let c of monthsList">{{c.name}}</option>
+                    </select>
+                    
                 </div>
                 <div class="row">
                     <div class="col">
@@ -70,7 +83,22 @@
             <hr/>
             <table class="table">
                 <tbody id="calculations">
-                    
+
+                    <tr>
+                        <td>Net Salary</td><td>{{netSalary}}</td>
+                    </tr>
+                    <tr>
+                        <td>Total Bill</td><td>{{totalBill}}</td>
+                    </tr>
+                    <!-- <tr>
+                        <td>Balance</td>
+                        <td class='bg-danger'>KSH. {{netSalary - totalBill}}</td>
+                    </tr> -->
+
+                    <tr>
+                        <td>Balance</td>
+                        <td class='bg-success billmanager'>KSH. {{netSalary - totalBill}}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>

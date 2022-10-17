@@ -12,7 +12,8 @@ import { BillmanagerComponent } from './billmanager/billmanager.component';
 import { FooterComponent } from './footer/footer.component';
 import { TestComponent } from './test/test.component';
 import { FormsModule }   from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
+import { ItemsService } from './services/ItemsService';
 
 @NgModule({
   declarations: [
@@ -26,12 +27,13 @@ import { FormsModule }   from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     NgbModule,
     FontAwesomeModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ItemsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
