@@ -5,13 +5,14 @@ import { Observable, throwError, VirtualTimeScheduler } from 'rxjs';
 import { map, catchError} from 'rxjs/operators';
  
 import { itemsRepository } from './itemsRepository';
+import { environment } from '../env';
  
 @Injectable({
     providedIn:'root'
 })
 export class ItemsService {
  
-  baseURL: string = "http://167.99.19.186:8000";
+  baseURL: string = environment.apiURL;
  
   constructor(private http: HttpClient) {
   }
