@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,6 +36,7 @@ import { ItemsService } from './services/ItemsService';
     FormsModule
   ],
   providers: [ItemsService],
+     
   bootstrap: [AppComponent]
 })
 export class AppModule { }
